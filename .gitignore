@@ -1,0 +1,24 @@
+# dependencies
+node_modules
+
+# testing
+coverage
+html
+
+# production
+dist
+*.tgz
+
+# misc
+.DS_Store
+.env
+.env.*
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-error.log*
+
+# ts
+*.tsbuildinfo

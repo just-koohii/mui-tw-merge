@@ -1,0 +1,53 @@
+{
+  "name": "mui-tw-merge",
+  "description": "",
+  "version": "1.0.0",
+  "keywords": [
+    "react",
+    "mui",
+    "material-ui",
+    "material design",
+    "tailwindcss"
+  ],
+  "author": "",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "tsc -p tsconfig.build.json && cp package.json dist",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --run --coverage",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "typecheck": "tsc --noEmit",
+    "make": "npm run build && cd dist && npm pack && cd .. && mv ./dist/*.tgz .",
+    "deploy": "git pull && npm version $VERSION && git push --tags && git push",
+    "patch": "VERSION=patch npm run deploy",
+    "minor": "VERSION=minor npm run deploy",
+    "major": "VERSION=major npm run deploy"
+  },
+  "devDependencies": {
+    "@emotion/styled": "^11.11.0",
+    "@types/node": "^20.6.0",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "@vitest/coverage-v8": "^0.34.4",
+    "@vitest/ui": "^0.34.4",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-import-resolver-typescript": "^3.6.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-n": "^16.0.2",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.4"
+  },
+  "peerDependencies": {
+    "@mui/material": "*",
+    "tailwindcss": "*"
+  }
+}
