@@ -1,6 +1,6 @@
 /**
- * Merged palette type, overrides the default MUI palette type.
- * Typescript forced my hand there
+ * Type used to override the default MUI palette type.
+ * Typescript forced my hand there.
  */
 export type MergedPalette = {
   primary: Record<string, string>;

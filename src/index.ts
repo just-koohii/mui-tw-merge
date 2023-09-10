@@ -1,7 +1,8 @@
 import { theme as tailwindTheme } from "tailwindcss/defaultConfig";
 import type { Theme } from "@mui/material/styles";
-import { MergedPalette } from "src/types/merged-palette";
 import { Typography } from "@mui/material/styles/createTypography";
+import { MergedPalette } from "./types/merged-palette";
+import { toKebabCase } from "./utils/to-kebab-case";
 
 /**
  * Converts the theme's fontWeight into tailwind's fontWeight option format.
@@ -11,7 +12,7 @@ export const mergeFontWeight = (muiTheme: Theme) => {
     throw new Error("muiTheme.typography is undefined");
   }
 
-  const fontWeightKeys = Object.keys(muiTheme?.typography).filter((key) =>
+  const fontWeightKeys = Object.keys(muiTheme.typography).filter((key) =>
     key.startsWith("fontWeight"),
   ) as Array<keyof Typography>;
 
@@ -99,5 +100,37 @@ export const mergeSpacing = (muiTheme: Theme) => {
 
   return Object.fromEntries(
     spacingKeysWithoutPx.map((key) => [key, muiTheme.spacing(+key)]),
+  );
+};
+
+/**
+ * Converts the theme's easing functions into tailwind's transitionTimingFunction option format.
+ */
+export const mergeTransitionEasing = (muiTheme: Theme) => {
+  if (!muiTheme?.transitions?.easing) {
+    throw new Error("muiTheme.transitions.easing is undefined");
+  }
+
+  return Object.fromEntries(
+    Object.entries(muiTheme.transitions.easing).map(([key, value]) => [
+      toKebabCase(key.replace("easing", "")),
+      value,
+    ]),
+  );
+};
+
+/**
+ * Converts the theme's easing durations into tailwind's transitionDuration option format.
+ */
+export const mergeTransitionDuration = (muiTheme: Theme) => {
+  if (!muiTheme?.transitions?.duration) {
+    throw new Error("muiTheme.transitions.duration is undefined");
+  }
+
+  return Object.fromEntries(
+    Object.entries(muiTheme.transitions.duration).map(([key, value]) => [
+      toKebabCase(key),
+      value,
+    ]),
   );
 };

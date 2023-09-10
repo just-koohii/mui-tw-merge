@@ -1,15 +1,23 @@
-import { type Theme, createTheme } from "@mui/material/styles";
+import {
+  type Theme,
+  createTheme,
+  Easing,
+  Duration,
+} from "@mui/material/styles";
 import {
   mergeFontWeight,
   mergePalette,
   mergeScreens,
   mergeShadows,
   mergeSpacing,
-} from "../src";
+  mergeTransitionEasing,
+  mergeTransitionDuration,
+} from "../../src";
 import { theme as defaultTailwindTheme } from "tailwindcss/defaultConfig";
 import { Typography } from "@mui/material/styles/createTypography";
 import resolveConfig from "tailwindcss/resolveConfig";
 import { Config } from "tailwindcss";
+import { toKebabCase } from "../../src/utils/to-kebab-case";
 
 describe("mui-tw-merge", () => {
   const theme = createTheme();
@@ -206,6 +214,88 @@ describe("mui-tw-merge", () => {
       expect(() => {
         mergeFontWeight({} as Theme);
       }).toThrowError("muiTheme.typography is undefined");
+    });
+  });
+
+  describe("mergeTransitionEasing", () => {
+    it("should return an object containing the theme's easing functions in tailwind format", () => {
+      const mergedEasing = mergeTransitionEasing(theme);
+
+      const easingObj: Record<string, string> = {};
+
+      Object.keys(theme.transitions.easing).forEach((key) => {
+        easingObj[toKebabCase(key.replace("easing", ""))] = expect.any(String);
+      });
+
+      const mergedConfig: Config = resolveConfig({
+        content: [],
+        theme: {
+          extend: {
+            transitionTimingFunction: mergedEasing,
+          },
+        },
+      });
+
+      expect(mergedEasing).toStrictEqual(easingObj);
+
+      expect(mergedConfig?.theme?.transitionTimingFunction).toStrictEqual(
+        expect.objectContaining(mergedEasing),
+      );
+    });
+
+    it("should thrown an error if the theme's transitions or transitions.easing is undefined", () => {
+      expect(() => {
+        mergeTransitionEasing({} as Theme);
+      }).toThrowError("muiTheme.transitions.easing is undefined");
+
+      expect(() => {
+        mergeTransitionEasing({
+          transitions: {
+            easing: undefined as unknown as Easing,
+          },
+        } as Theme);
+      }).toThrowError("muiTheme.transitions.easing is undefined");
+    });
+  });
+
+  describe("mergeTransitionDuration", () => {
+    it("should return an object containing the theme's transition durations in tailwind format", () => {
+      const mergedDuration = mergeTransitionDuration(theme);
+
+      const durationObj: Record<string, string> = {};
+
+      Object.keys(theme.transitions.duration).forEach((key) => {
+        durationObj[toKebabCase(key)] = expect.any(Number);
+      });
+
+      const mergedConfig: Config = resolveConfig({
+        content: [],
+        theme: {
+          extend: {
+            transitionDuration: mergedDuration,
+          },
+        },
+      });
+
+      expect(mergedDuration).toStrictEqual(durationObj);
+
+      expect(mergedConfig?.theme?.transitionDuration).toStrictEqual(
+        expect.objectContaining(mergedDuration),
+      );
+    });
+
+    it("should thrown an error if the theme's transitions or transitions.duration is undefined", () => {
+      expect(() => {
+        mergeTransitionDuration({} as Theme);
+      }).toThrowError("muiTheme.transitions.duration is undefined");
+
+      expect(() => {
+        mergeTransitionDuration({
+          transitions: {
+            duration: undefined as unknown as Duration,
+          },
+        } as Theme);
+      }).toThrowError("muiTheme.transitions.duration is undefined");
     });
   });
 });
