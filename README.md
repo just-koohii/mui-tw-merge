@@ -1,14 +1,18 @@
 # mui-tw-merge
 
-<div align="center" style="display: flex; flex-direction: column; align-items: center; margin-bottom: 16px;">
+<div align="center">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-dark.svg">
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-light.svg">
       <img alt="Tailwind CSS" src="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-light.svg" width="350" height="70" style="max-width: 100%;">
     </picture>
+    <br/>
     <img width="150" src="/.github/plus.svg" alt="Plus">
+    <br/>
     <img width="150" src="https://raw.githubusercontent.com/mui/material-ui/master/docs/public/static/logo.svg" alt="MUI logo">
 </div>
+
+<br/>
 
 <p align="center">
   Utility functions to merge MUI's theme into TailwindCSS
