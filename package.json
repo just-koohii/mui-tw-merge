@@ -3,10 +3,14 @@
   "description": "Utility functions to merge MUI's theme into TailwindCSS",
   "author": "just-koohii",
   "license": "MIT",
+  "main": "./dist/index.js",
   "version": "1.0.0",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/just-koohii/mui-tw-merge"
+    "url": "git+https://github.com/just-koohii/mui-tw-merge.git"
   },
   "keywords": [
     "react",
@@ -15,18 +19,15 @@
     "material design",
     "tailwindcss"
   ],
-  "main": "index.js",
   "scripts": {
-    "prebuild": "rm -rf dist",
-    "build": "tsc -p tsconfig.build.json && cp package.json dist",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.build.json --noEmit",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --run --coverage",
-    "lint": "eslint src --ext .ts",
-    "lint:fix": "eslint src --ext .ts --fix",
-    "typecheck": "tsc --noEmit",
-    "make": "npm run build && cd dist && npm pack && cd .. && mv ./dist/*.tgz .",
-    "deploy": "git pull && npm version $VERSION && git push --tags && git push",
+    "bump-version": "git pull && npm version $VERSION && git push --tags && git push",
     "patch": "VERSION=patch npm run deploy",
     "minor": "VERSION=minor npm run deploy",
     "major": "VERSION=major npm run deploy"
