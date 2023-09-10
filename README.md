@@ -6,10 +6,7 @@
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-light.svg">
       <img alt="Tailwind CSS" src="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-light.svg" width="350" height="70" style="max-width: 100%;">
     </picture>
-    <svg xmlns="http://www.w3.org/2000/svg" alt="MUI" viewBox="0 0 24 24" width="50" fill="white">
-        <title>Plus</title>
-        <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
-    </svg>
+    <img width="150" src="/.github/plus.svg" alt="Plus">
     <img width="150" src="https://raw.githubusercontent.com/mui/material-ui/master/docs/public/static/logo.svg" alt="MUI logo">
 </div>
 
