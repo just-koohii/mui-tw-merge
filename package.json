@@ -1,7 +1,13 @@
 {
   "name": "mui-tw-merge",
-  "description": "justkoohii",
+  "description": "Utility functions to merge MUI's theme into TailwindCSS",
+  "author": "just-koohii",
+  "license": "MIT",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/just-koohii/mui-tw-merge"
+  },
   "keywords": [
     "react",
     "mui",
@@ -9,8 +15,6 @@
     "material design",
     "tailwindcss"
   ],
-  "author": "",
-  "license": "ISC",
   "main": "index.js",
   "scripts": {
     "prebuild": "rm -rf dist",
