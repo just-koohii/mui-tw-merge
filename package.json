@@ -3,11 +3,7 @@
   "description": "Utility functions to merge MUI's theme into TailwindCSS",
   "author": "just-koohii",
   "license": "MIT",
-  "main": "./dist/index.js",
   "version": "1.0.0",
-  "files": [
-    "dist"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/just-koohii/mui-tw-merge.git"
@@ -18,6 +14,10 @@
     "material-ui",
     "material design",
     "tailwindcss"
+  ],
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
   ],
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.build.json",
