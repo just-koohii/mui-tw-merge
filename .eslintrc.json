@@ -13,13 +13,6 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "settings": {
-        "import/resolver": {
-            "typescript": {
-                "project": "."
-            }
-        }
-    },
     "ignorePatterns": ["node_modules", "dist", "coverage"],
     "plugins": [
         "@typescript-eslint",

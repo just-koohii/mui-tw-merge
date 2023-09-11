@@ -38,8 +38,8 @@ devDependencies:
     specifier: ^9.0.0
     version: 9.0.0(eslint@8.49.0)
   eslint-config-ristretto:
-    specifier: ^1.0.1
-    version: 1.0.1(@typescript-eslint/eslint-plugin@6.6.0)(@typescript-eslint/parser@6.6.0)(eslint-plugin-import@2.28.1)(eslint-plugin-promise@6.1.1)(eslint@8.49.0)
+    specifier: ^1.0.2
+    version: 1.0.2(@typescript-eslint/eslint-plugin@6.6.0)(@typescript-eslint/parser@6.6.0)(eslint-plugin-import@2.28.1)(eslint-plugin-promise@6.1.1)(eslint@8.49.0)
   eslint-plugin-import:
     specifier: ^2.28.1
     version: 2.28.1(@typescript-eslint/parser@6.6.0)(eslint@8.49.0)
@@ -1561,8 +1561,8 @@ packages:
       eslint: 8.49.0
     dev: true
 
-  /eslint-config-ristretto@1.0.1(@typescript-eslint/eslint-plugin@6.6.0)(@typescript-eslint/parser@6.6.0)(eslint-plugin-import@2.28.1)(eslint-plugin-promise@6.1.1)(eslint@8.49.0):
-    resolution: {integrity: sha512-pqsHWt5zYpBCbVjhV9y2JZeDLwcrD1i8Pwx48KmEzXO1Dat5GtvGpousQkclxgPTFuTCNW48a2LxEj2fB4pLYQ==}
+  /eslint-config-ristretto@1.0.2(@typescript-eslint/eslint-plugin@6.6.0)(@typescript-eslint/parser@6.6.0)(eslint-plugin-import@2.28.1)(eslint-plugin-promise@6.1.1)(eslint@8.49.0):
+    resolution: {integrity: sha512-kQdPilWg5nkiwBi/K5RmqXe4UhOkWFfygFtN5ebS5qtwOkxP1keltpCm+99a46bLJfhTqOJVk7IQLVB1omdV2Q==}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': '*'
       '@typescript-eslint/parser': '*'
