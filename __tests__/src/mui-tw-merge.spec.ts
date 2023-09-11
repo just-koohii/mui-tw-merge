@@ -4,6 +4,10 @@ import {
   Easing,
   Duration,
 } from "@mui/material/styles";
+import { theme as defaultTailwindTheme } from "tailwindcss/defaultConfig";
+import { Typography } from "@mui/material/styles/createTypography";
+import resolveConfig from "tailwindcss/resolveConfig";
+import { Config } from "tailwindcss";
 import {
   mergeFontWeight,
   mergePalette,
@@ -13,10 +17,6 @@ import {
   mergeTransitionEasing,
   mergeTransitionDuration,
 } from "../../src";
-import { theme as defaultTailwindTheme } from "tailwindcss/defaultConfig";
-import { Typography } from "@mui/material/styles/createTypography";
-import resolveConfig from "tailwindcss/resolveConfig";
-import { Config } from "tailwindcss";
 import { toKebabCase } from "../../src/utils/to-kebab-case";
 
 describe("mui-tw-merge", () => {

@@ -1,5 +1,5 @@
 import { theme as tailwindTheme } from "tailwindcss/defaultConfig";
-import type { Theme } from "@mui/material/styles";
+import { type Theme } from "@mui/material/styles";
 import { Typography } from "@mui/material/styles/createTypography";
 import { MergedPalette } from "./types/merged-palette";
 import { toKebabCase } from "./utils/to-kebab-case";
@@ -7,7 +7,7 @@ import { toKebabCase } from "./utils/to-kebab-case";
 /**
  * Converts the theme's fontWeight into tailwind's fontWeight option format.
  */
-export const mergeFontWeight = (muiTheme: Theme) => {
+export const mergeFontWeight = (muiTheme: Theme): Record<string, string> => {
   if (!muiTheme?.typography) {
     throw new Error("muiTheme.typography is undefined");
   }
