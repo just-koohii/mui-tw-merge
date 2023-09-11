@@ -3,7 +3,7 @@
   "description": "Utility functions to merge MUI's theme into TailwindCSS",
   "author": "just-koohii",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/just-koohii/mui-tw-merge.git"
