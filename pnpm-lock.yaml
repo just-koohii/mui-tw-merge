@@ -38,8 +38,8 @@ devDependencies:
     specifier: ^9.0.0
     version: 9.0.0(eslint@8.49.0)
   eslint-config-ristretto:
-    specifier: ^1.0.2
-    version: 1.0.2(@typescript-eslint/eslint-plugin@6.6.0)(@typescript-eslint/parser@6.6.0)(eslint-plugin-import@2.28.1)(eslint-plugin-promise@6.1.1)(eslint@8.49.0)
+    specifier: ^1.0.3
+    version: 1.0.3(@typescript-eslint/eslint-plugin@6.6.0)(@typescript-eslint/parser@6.6.0)(eslint-plugin-import@2.28.1)(eslint-plugin-promise@6.1.1)(eslint@8.49.0)
   eslint-plugin-import:
     specifier: ^2.28.1
     version: 2.28.1(@typescript-eslint/parser@6.6.0)(eslint@8.49.0)
@@ -114,6 +114,12 @@ packages:
     dependencies:
       regenerator-runtime: 0.14.0
 
+  /@babel/runtime@7.23.1:
+    resolution: {integrity: sha512-hC2v6p8ZSI/W0HUzh3V8C5g+NwSKzKPtJwSpTjwl0o297GP9+ZLQSkdvHz46CM3LqyoXxq+5G9komY+eSqSO0g==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.14.0
+
   /@babel/types@7.22.17:
     resolution: {integrity: sha512-YSQPHLFtQNE5xN9tHuZnzu8vPr61wVTBZdfv1meex1NBosa4iT05k/Jw06ddJugi4bk7The/oSwQGFcksmEJQg==}
     engines: {node: '>=6.9.0'}
@@ -170,7 +176,7 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@babel/runtime': 7.22.15
+      '@babel/runtime': 7.23.1
       '@emotion/babel-plugin': 11.11.0
       '@emotion/cache': 11.11.0
       '@emotion/serialize': 1.1.2
@@ -1561,8 +1567,8 @@ packages:
       eslint: 8.49.0
     dev: true
 
-  /eslint-config-ristretto@1.0.2(@typescript-eslint/eslint-plugin@6.6.0)(@typescript-eslint/parser@6.6.0)(eslint-plugin-import@2.28.1)(eslint-plugin-promise@6.1.1)(eslint@8.49.0):
-    resolution: {integrity: sha512-kQdPilWg5nkiwBi/K5RmqXe4UhOkWFfygFtN5ebS5qtwOkxP1keltpCm+99a46bLJfhTqOJVk7IQLVB1omdV2Q==}
+  /eslint-config-ristretto@1.0.3(@typescript-eslint/eslint-plugin@6.6.0)(@typescript-eslint/parser@6.6.0)(eslint-plugin-import@2.28.1)(eslint-plugin-promise@6.1.1)(eslint@8.49.0):
+    resolution: {integrity: sha512-WFtBxFzkS9Cjg804qzp+uzicQ3JhwY5Iv6yozOf5IFJ899m0VcpVbjS7p8AljXWTvDDfywHJEF5lCjfta5HlVw==}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': '*'
       '@typescript-eslint/parser': '*'
