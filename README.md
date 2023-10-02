@@ -7,7 +7,7 @@
       <img alt="Tailwind CSS" src="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-light.svg" width="350" height="70" style="max-width: 100%;">
     </picture>
     <br/>
-    <img width="150" src="/.github/plus.svg" alt="Plus">
+    <img width="150" src="https://raw.githubusercontent.com/just-koohii/mui-tw-merge/HEAD/.github/plus.svg" alt="Plus">
     <br/>
     <img width="150" src="https://raw.githubusercontent.com/mui/material-ui/master/docs/public/static/logo.svg" alt="MUI logo">
 </div>
